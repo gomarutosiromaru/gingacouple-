@@ -77,13 +77,67 @@ body.welcome-open{overflow:hidden}
 @media(max-width:560px){.welcome-inner{padding-top:45px}.welcome-pair{gap:10px}.welcome-person{width:44vw}.welcome-person img{height:190px}.welcome-bubble{padding:9px 10px}.welcome-title{font-size:30px}}
 @media(prefers-reduced-motion:reduce){#welcome-galaxy *,#welcome-galaxy *:before,#welcome-galaxy *:after{animation:none!important;transition:none!important}}
 </style>
+<style id="love-welcome-v6">
+#welcome-galaxy .welcome-inner{padding-top:38px;padding-bottom:25px}
+#welcome-galaxy .welcome-title{margin:7px 0 2px;font-size:clamp(25px,4.4vw,45px)}
+.love-scene{position:relative;width:min(86vw,650px);height:clamp(240px,43vw,450px);margin:6px auto 3px;display:grid;place-items:center;isolation:isolate}
+.love-halo{position:absolute;inset:7% 6%;border-radius:50%;background:radial-gradient(ellipse,#ffbbe7a8 0%,#a98cff77 40%,transparent 72%);filter:blur(22px);animation:loveHalo 2.3s ease-in-out infinite alternate}
+.love-art{position:relative;width:min(100%,580px);transform-origin:50% 82%;animation:loveEntrance 1.15s cubic-bezier(.18,.9,.25,1.15) both,loveWiggle 2.6s ease-in-out 1.15s infinite;filter:drop-shadow(0 0 22px #ffc3ff)}
+.love-art img{display:block;width:100%;height:auto;max-height:390px;object-fit:contain;border-radius:34px;box-shadow:0 0 45px #ffb9ff66}
+.love-shout{position:absolute;top:6%;right:-4%;z-index:3;padding:10px 18px;border:2px solid #fff9;border-radius:999px;background:linear-gradient(120deg,#ff85ca,#b78aff);box-shadow:0 0 18px #ff9ddd,0 0 40px #a68fff;font-size:clamp(15px,3.3vw,29px);font-weight:1000;letter-spacing:.05em;transform:rotate(9deg);animation:lovePop .7s 1.1s both,loveShout 1.9s 1.8s ease-in-out infinite}
+.love-shout span{display:inline-block;animation:loveBeat .6s ease-in-out infinite alternate}
+.love-hearts{position:absolute;inset:0;pointer-events:none;overflow:visible}
+.love-hearts span{position:absolute;bottom:10%;left:50%;font-size:clamp(21px,4vw,44px);color:#ffe4ff;text-shadow:0 0 12px #ff89e0;opacity:0;animation:loveFloat 3.3s ease-out infinite}
+.love-hearts span:nth-child(1){left:7%;animation-delay:.1s}.love-hearts span:nth-child(2){left:20%;animation-delay:1.4s;color:#fff6b7}.love-hearts span:nth-child(3){left:78%;animation-delay:.8s}.love-hearts span:nth-child(4){left:88%;animation-delay:2.1s;color:#b6e8ff}.love-hearts span:nth-child(5){left:45%;animation-delay:2.5s}.love-hearts span:nth-child(6){left:63%;animation-delay:1.9s;color:#fff6b7}
+.love-subline{color:#fff1fc;font-size:clamp(11px,2.5vw,15px);margin:5px 0 20px;letter-spacing:.04em}
+@keyframes loveEntrance{0%{opacity:0;transform:translateY(100px) scale(.45) rotate(-20deg)}65%{opacity:1;transform:translateY(-24px) scale(1.08) rotate(8deg)}100%{opacity:1;transform:translateY(0) scale(1) rotate(0)}}
+@keyframes loveWiggle{0%,100%{transform:translateY(0) rotate(-3deg) scale(1)}50%{transform:translateY(-12px) rotate(3deg) scale(1.025)}}
+@keyframes loveHalo{to{transform:scale(1.14);opacity:.6}}
+@keyframes lovePop{from{opacity:0;transform:scale(.1) rotate(-18deg)}70%{opacity:1;transform:scale(1.2) rotate(12deg)}to{opacity:1;transform:scale(1) rotate(9deg)}}
+@keyframes loveShout{50%{transform:rotate(3deg) scale(1.08)}}
+@keyframes loveBeat{to{transform:scale(1.35)}}
+@keyframes loveFloat{0%{transform:translate(0,10px) scale(.4) rotate(-25deg);opacity:0}18%{opacity:1}80%{opacity:1}100%{transform:translate(30px,-235px) scale(1.35) rotate(24deg);opacity:0}}
+@media(max-width:600px){.love-scene{width:92vw;height:clamp(230px,67vw,340px)}.love-art img{max-height:280px}.love-shout{right:0;top:0;padding:7px 12px}.love-subline{margin-bottom:14px}#welcome-galaxy .welcome-inner{padding-top:28px}}
+@media(prefers-reduced-motion:reduce){.love-scene *, .love-scene *:before,.love-scene *:after{animation:none!important}.love-shout{opacity:1}.love-art{opacity:1}}
+</style>
 <div id="welcome-galaxy" role="dialog" aria-modal="true" aria-labelledby="welcome-heading">
  <div class="welcome-stars" aria-hidden="true"></div><div class="welcome-shoot" aria-hidden="true"></div><div class="welcome-shoot" aria-hidden="true"></div>
  <div class="welcome-inner"><div class="welcome-kicker">GOMARU × SHIRATAMA</div><h2 id="welcome-heading" class="welcome-title">ふたりの銀河へようこそ ✦</h2><p class="welcome-caption">今日も、会いに来てくれてありがとう。</p>
- <div class="welcome-pair"><div class="welcome-person gomaru"><div class="welcome-bubble">銀河一好き♡</div><img src="gomaru.jpg" alt="お出迎えするごまる" fetchpriority="high"></div><div class="welcome-person shiratama"><div class="welcome-bubble">いらっしゃい♡</div><img src="shiratama.jpg" alt="お出迎えするしらたま" fetchpriority="high"></div></div>
+ <div class="love-scene" aria-label="ごまるが好き！とお出迎え"><div class="love-halo" aria-hidden="true"></div><div class="love-art"><img src="love-gomaru.jpg" alt="銀河一好き♡と伝えるごまる" fetchpriority="high"></div><div class="love-shout" aria-hidden="true">好きーーっ！！ <span>💗</span></div><div class="love-hearts" aria-hidden="true"><span>♡</span><span>✦</span><span>♡</span><span>✧</span><span>♡</span><span>✦</span></div></div><p class="love-subline">ごまるが、全力の「好き！」でお出迎え 💫</p>
  <button class="welcome-enter" id="welcome-enter" type="button">銀河に入る ✧</button><button class="welcome-skip" id="welcome-skip" type="button">スキップする</button>
  </div></div>
 <script id="welcome-v4-script">
 (()=>{'use strict';const welcome=document.getElementById('welcome-galaxy');if(!welcome)return;const enter=document.getElementById('welcome-enter');const previousFocus=document.activeElement;let done=false;document.body.classList.add('welcome-open');function close(){if(done)return;done=true;welcome.classList.add('welcome-gone');document.body.classList.remove('welcome-open');window.setTimeout(()=>{welcome.remove();if(previousFocus&&previousFocus!==document.body&&previousFocus.isConnected)previousFocus.focus({preventScroll:true})},850)}enter.addEventListener('click',close);document.getElementById('welcome-skip').addEventListener('click',close);welcome.addEventListener('keydown',e=>{if(e.key==='Escape'){close();return}if(e.key==='Tab'){e.preventDefault();(document.activeElement===enter?document.getElementById('welcome-skip'):enter).focus()}});enter.focus({preventScroll:true});})();
+</script>
+
+<style>
+#galaxy-sound-toggle{position:fixed;right:17px;bottom:18px;z-index:10010;border:1px solid rgba(255,255,255,.65);border-radius:999px;padding:12px 16px;color:#fff;background:linear-gradient(135deg,#7553b7,#d57bb8);box-shadow:0 5px 22px #7357c57a;cursor:pointer;font-size:14px;transition:transform .2s,box-shadow .2s}
+#galaxy-sound-toggle:hover,#galaxy-sound-toggle:focus-visible{transform:scale(1.08);box-shadow:0 0 25px #f9b4ff,0 0 55px #a7a1ff}
+#galaxy-sound-toggle:focus-visible{outline:3px solid #fff;outline-offset:3px}
+</style>
+<button id="galaxy-sound-toggle" type="button" aria-label="効果音をオフにする" aria-pressed="true">🔊 効果音 ON</button>
+<script>
+(()=>{'use strict';
+let enabled=true,ctx=null,lastMeteor=0,hoverAt=0;
+const toggle=document.getElementById('galaxy-sound-toggle');
+function context(){if(!ctx){const Audio=window.AudioContext||window.webkitAudioContext;if(!Audio)return null;ctx=new Audio()}if(ctx.state==='suspended')ctx.resume().catch(()=>{});return ctx}
+function note(freq,start,duration,volume,type='sine'){
+ const ac=context();if(!ac||!enabled)return;
+ const osc=ac.createOscillator(),gain=ac.createGain();osc.type=type;osc.frequency.setValueAtTime(freq,start);gain.gain.setValueAtTime(.0001,start);gain.gain.exponentialRampToValueAtTime(Math.max(.0002,volume),start+.014);gain.gain.exponentialRampToValueAtTime(.0001,start+duration);osc.connect(gain);gain.connect(ac.destination);osc.start(start);osc.stop(start+duration+.02)
+}
+function chime(kind){if(!enabled)return;const ac=context();if(!ac||ac.state!=='running')return;const t=ac.currentTime+.01;
+ if(kind==='meteor'){note(988,t,.22,.023);note(1480,t+.065,.32,.020);note(1976,t+.13,.48,.014)}
+ else if(kind==='hover'){note(1175,t,.12,.008);note(1760,t+.05,.17,.006)}
+ else{note(880,t,.2,.035);note(1320,t+.055,.28,.027);note(1760,t+.12,.38,.022);note(2640,t+.19,.5,.012)}
+}
+function render(){toggle.textContent=enabled?'🔊 効果音 ON':'🔇 効果音 OFF';toggle.setAttribute('aria-pressed',String(enabled));toggle.setAttribute('aria-label',enabled?'効果音をオフにする':'効果音をオンにする')}
+toggle.addEventListener('click',e=>{e.stopPropagation();enabled=!enabled;render();if(enabled)chime('click')});
+document.addEventListener('pointerdown',e=>{if(e.target.closest('#galaxy-sound-toggle'))return;chime('click')},{passive:true});
+document.addEventListener('pointerover',e=>{if(!e.target.closest('a,button,.character-card,.comic-card'))return;const now=performance.now();if(now-hoverAt<180)return;hoverAt=now;chime('hover')},{passive:true});
+// 流れ星のタイミングに近い間隔で控えめなキラン音。ユーザーが一度操作した後のみ。
+let interacted=false;document.addEventListener('pointerdown',()=>{interacted=true},{once:true});
+setInterval(()=>{if(!interacted||document.hidden||!enabled)return;const now=performance.now();if(now-lastMeteor<5500)return;lastMeteor=now;chime('meteor')},8500);
+render();
+})();
 </script>
 </body></html>
