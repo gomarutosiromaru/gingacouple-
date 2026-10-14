@@ -1,0 +1,18 @@
+/* Galaxy Couple Ultimate V8 — non-destructive visual upgrade */
+:root{--ultimate-pink:#ffb6e7;--ultimate-purple:#ad91ff}
+#ultimate-warp{position:fixed;inset:0;z-index:100050;pointer-events:none;opacity:0;overflow:hidden;background:radial-gradient(ellipse at center,#3e2469 0%,#120d30 60%,#080717 100%);transition:opacity .2s ease}
+#ultimate-warp.active{opacity:1}
+#ultimate-warp canvas{display:block;width:100%;height:100%}
+#ultimate-warp .ultimate-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:12vmin;height:12vmin;border-radius:50%;background:#fff;box-shadow:0 0 25px 15px #fff,0 0 90px 55px #ffb5ff,0 0 180px 100px #9976ff;opacity:0}
+#ultimate-warp.climax .ultimate-center{animation:ultimate-arrive .75s ease-out forwards}
+@keyframes ultimate-arrive{0%{opacity:0;transform:translate(-50%,-50%) scale(.05)}45%{opacity:.8;transform:translate(-50%,-50%) scale(2)}100%{opacity:1;transform:translate(-50%,-50%) scale(25)}}
+#ultimate-warp .ultimate-caption{position:absolute;bottom:12%;width:100%;text-align:center;color:#fff;font-weight:900;letter-spacing:.35em;text-shadow:0 0 20px #fff;font-size:clamp(12px,2.4vw,19px);animation:ultimate-pulse .9s ease-in-out infinite alternate}
+@keyframes ultimate-pulse{to{opacity:.4;letter-spacing:.48em}}
+body.ultimate-warping{overflow:hidden!important}
+/* Refined polish without compromising comic readability */
+.hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 100%,#ffbde91a,transparent 50%);mix-blend-mode:screen}
+.section-heading{text-wrap:balance}
+.card,.comic,.social a{transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease,border-color .45s ease}
+.card:hover,.comic:hover{border-color:#e8b5fb;transform:translateY(-8px)}
+a:focus-visible,button:focus-visible{outline:3px solid #f8a9e7;outline-offset:4px}
+@media(prefers-reduced-motion:reduce){#ultimate-warp{display:none!important}.card:hover,.comic:hover{transform:none}}
